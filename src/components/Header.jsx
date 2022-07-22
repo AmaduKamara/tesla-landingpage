@@ -75,6 +75,15 @@ function Header() {
               <p>English</p>
             </div>
           </li>
+          <li onClick={() => setBurgerOpen(false)}>
+            <a
+              href="https://amkam.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Developed by: <span className="font-bold">Amkam</span>{" "}
+            </a>
+          </li>
         </BurgerNav>
       </BurgerNavWrapper>
     </Container>
