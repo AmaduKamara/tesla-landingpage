@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-
 import styled from "styled-components";
+
+import { useSelector } from "react-redux";
+import { selectCars } from "../features/car/carSlice";
 
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
@@ -9,6 +11,8 @@ import { BsGlobe } from "react-icons/bs";
 
 function Header() {
   const [burgerOpen, setBurgerOpen] = useState(false);
+  const cars = useSelector(selectCars);
+  console.log(cars);
 
   return (
     <Container>
@@ -16,13 +20,12 @@ function Header() {
         <img src="/images/logo.svg" alt="Tesla Logo" />
       </a>
       <Menu>
-        <a href="#">Model S</a>
-
-        <a href="#">Model 3</a>
-
-        <a href="#">Model X</a>
-
-        <a href="#">Model Y</a>
+        {cars &&
+          cars.map((car, index) => (
+            <a href="#" key={index}>
+              {car}
+            </a>
+          ))}
 
         <a href="#">Solar Roof</a>
 
@@ -41,10 +44,12 @@ function Header() {
               className="text-5xl rounded-full hover:bg-gray-100 transition-all duration-500 p-2 z-40 cursor-pointer"
             />
           </CloseWrapper>
-          <li onClick={() => setBurgerOpen(false)}>Model S</li>
-          <li onClick={() => setBurgerOpen(false)}>Model 3</li>
-          <li onClick={() => setBurgerOpen(false)}>Model X</li>
-          <li onClick={() => setBurgerOpen(false)}>Model Y</li>
+          {cars &&
+            cars.map((car, index) => (
+              <li href="#" key={index} onClick={() => setBurgerOpen(false)}>
+                {car}
+              </li>
+            ))}
           <li onClick={() => setBurgerOpen(false)}>Solar Roof</li>
           <li onClick={() => setBurgerOpen(false)}>Solar Pannels</li>
           <li onClick={() => setBurgerOpen(false)}>Trade-In</li>
