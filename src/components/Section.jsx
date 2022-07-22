@@ -1,17 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-function Section() {
+function Section({
+  title,
+  description,
+  backgroundImage,
+  leftButtonText,
+  rightButtonText,
+}) {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImage}>
       <ItemText>
-        <h1 className="text-5xl font-semibold py-2">Model S</h1>
-        <p className="text-lg">Order Online for Touchless Delivery</p>
+        <h1 className="text-5xl font-semibold py-2">{title}</h1>
+        <p className="text-lg">{description}</p>
       </ItemText>
       <Buttons>
         <ButtonGroup>
-          <LeftButton>Custom Order</LeftButton>
-          <RightButton>Existing Inventory</RightButton>
+          <LeftButton>{leftButtonText}</LeftButton>
+          <RightButton>{rightButtonText}</RightButton>
         </ButtonGroup>
         <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
@@ -32,6 +38,7 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-image: ${(props) => `url("/images/${props.bgImage}")`};
 `;
 
 const ItemText = styled.div`
@@ -42,6 +49,9 @@ const ItemText = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   margin-bottom: 30px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftButton = styled.div`
@@ -62,7 +72,7 @@ const LeftButton = styled.div`
 
 const RightButton = styled(LeftButton)`
   background-color: #fff;
-  opacity: 0.70;
+  opacity: 0.7;
   color: black;
   font-weight: bold;
 `;
