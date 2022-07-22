@@ -56,6 +56,7 @@ const Menu = styled.div`
     font-weight: 400;
     padding: 0 10px;
     flex-wrap: nowrap;
+    color: black;
   }
   @media (max-width: 768px) {
     display: none;
@@ -69,6 +70,7 @@ const RightMenu = styled.div`
   a {
     font-weight: 400;
     margin-right: 10px;
+    color: black;
   }
 `;
 
