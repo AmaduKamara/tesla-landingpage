@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { FaBars } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 function Header() {
   return (
@@ -29,6 +30,32 @@ function Header() {
         <a href="#">Account</a>
         <CustomMenu />
       </RightMenu>
+      <BurgerNavWrapper>
+        <BurgerNav>
+          <CloseWrapper>
+            <IoMdClose className="text-5xl rounded-full hover:bg-gray-100 transition-all duration-500 p-2 z-40 cursor-pointer" />
+          </CloseWrapper>
+          <li>Model S</li>
+          <li>Model 3</li>
+          <li>Model X</li>
+          <li>Model Y</li>
+          <li>Solar Roof</li>
+          <li>Solar Pannels</li>
+          <li>Trade-In</li>
+          <li>Test Drive</li>
+          <li>Insurance</li>
+          <li>Powerwall</li>
+          <li>Commercial Energy</li>
+          <li>Utilities</li>
+          <li>Charging</li>
+          <li>Find Us</li>
+          <li>Support</li>
+          <li>Investors Relationship</li>
+          <li>Shop</li>
+          <li>Account</li>
+          <li>More...</li>
+        </BurgerNav>
+      </BurgerNavWrapper>
     </Container>
   );
 }
@@ -45,6 +72,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+  z-index: 1;
 `;
 
 const Menu = styled.div`
@@ -76,4 +104,42 @@ const RightMenu = styled.div`
 
 const CustomMenu = styled(FaBars)`
   cursor: pointer;
+`;
+
+const BurgerNavWrapper = styled.div`
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background-color: #00000078;
+  z-index: 10;
+`;
+
+const BurgerNav = styled.ul`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  width: 300px;
+  z-index: 100;
+
+  li {
+    text-align: start;
+    padding: 10px 20px;
+    margin: 0 16px;
+    border-radius: 6px;
+  }
+
+  li:hover {
+    background-color: #f7f7f7;
+    cursor: pointer;
+  }
+`;
+
+const CloseWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  margin: 20px;
 `;
