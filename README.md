@@ -13,6 +13,10 @@
 
 Amadu Kamara (Amkam)
 
+## Live Demo
+
+[Tesla Landingpage Design](https://amkam-tesla-landingpage.netlify.app)
+
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/50941074/180577229-325dab48-c5e2-48ec-9485-ddd99aa8230a.png)
