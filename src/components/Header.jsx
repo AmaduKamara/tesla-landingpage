@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
+import { BsGlobe } from "react-icons/bs";
 
 function Header() {
   return (
@@ -54,6 +55,13 @@ function Header() {
           <li>Shop</li>
           <li>Account</li>
           <li>More...</li>
+          <li className="mt-24 flex items-baseline">
+            <BsGlobe />
+            <div className="ml-4">
+              <h3 className="font-semibold">United States</h3>
+              <p>English</p>
+            </div>
+          </li>
         </BurgerNav>
       </BurgerNavWrapper>
     </Container>
@@ -127,7 +135,7 @@ const BurgerNav = styled.ul`
 
   li {
     text-align: start;
-    padding: 10px 20px;
+    padding: 8px 20px;
     margin: 0 16px;
     border-radius: 6px;
   }
@@ -141,5 +149,5 @@ const BurgerNav = styled.ul`
 const CloseWrapper = styled.div`
   display: flex;
   justify-content: end;
-  margin: 20px;
+  margin: 16px;
 `;
